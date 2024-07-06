@@ -1,0 +1,156 @@
+$xm-width-breakpoint: 360px;
+$sm-width-breakpoint: 416px;
+$md-width-breakpoint: 768px;
+$lg-width-breakpoint: 1024px;
+$xl-width-breakpoint: 1044px;
+$xxl-width-breakpoint: 1900px;
+
+@mixin responsive-width-from($class) {
+  @if $class == xm {
+    @media (min-width: $xm-width-breakpoint + 1) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: $sm-width-breakpoint + 1) {
+      @content;
+    }
+  } @else if $class == md {
+    @media(min-width: $md-width-breakpoint + 1) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media(min-width: $lg-width-breakpoint + 1) {
+      @content;
+    }
+  } @else if $class == xl {
+    @media(min-width: $xl-width-breakpoint + 1) {
+      @content
+    }
+  } @else if $class == xxl {
+    @media(min-width: $xxl-width-breakpoint + 1) {
+      @content
+    }
+  } @else {
+    @warn 'Possible values are xm, sm, md, lg, xl, xxl';
+  }
+}
+
+@mixin responsive-width-below($class) {
+  @if $class == xm {
+    @media (max-width: $xm-width-breakpoint) {
+      @content;
+    }
+
+  } @else if $class == sm {
+    @media (max-width: $sm-width-breakpoint) {
+      @content;
+    }
+  } @else if $class == md {
+    @media(max-width: $md-width-breakpoint) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media(max-width: $lg-width-breakpoint) {
+      @content;
+    }
+  } @else if $class == xl {
+    @media(max-width: $xl-width-breakpoint) {
+      @content
+    }
+  } @else if $class == xxl {
+    @media(max-width: $xxl-width-breakpoint) {
+      @content
+    }
+  } @else {
+    @warn "Possible values are sm, md, lg, xl";
+  }
+}
+
+@mixin responsive-from-xm {
+  @include responsive-width-from(xm) {
+    @content;
+  }
+}
+
+@mixin responsive-from-sm {
+  @include responsive-width-from(sm) {
+    @content;
+  }
+}
+
+@mixin responsive-from-md {
+  @include responsive-width-from(md) {
+    @content;
+  }
+}
+
+@mixin responsive-from-lg {
+  @include responsive-width-from(lg) {
+    @content;
+  }
+}
+
+@mixin responsive-from-xl {
+  @include responsive-width-from(xl) {
+    @content;
+  }
+}
+
+@mixin responsive-from-xxl {
+  @include responsive-width-from(xxl) {
+    @content;
+  }
+}
+
+@mixin responsive-below-xm {
+  @include responsive-width-below(xm) {
+    @content;
+  }
+}
+
+@mixin responsive-below-sm {
+  @include responsive-width-below(sm) {
+    @content;
+  }
+}
+
+@mixin responsive-below-md {
+  @include responsive-width-below(md) {
+    @content;
+  }
+}
+
+@mixin responsive-below-lg {
+  @include responsive-width-below(lg) {
+    @content;
+  }
+}
+
+@mixin responsive-below-xl {
+  @include responsive-width-below(xl) {
+    @content;
+  }
+}
+
+@mixin responsive-below-xxl {
+  @include responsive-width-below(xxl) {
+    @content;
+  }
+}
+
+@mixin center {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin center-text {
+  @include center;
+  text-align: center;
+}
+
+@mixin equal-spaced {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}

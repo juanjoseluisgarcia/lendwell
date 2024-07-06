@@ -1,0 +1,17 @@
+@import "variables";
+@import "utils";
+
+.app {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background: $container-background;
+    padding: 20px;
+    margin: 20px;
+
+    @include responsive-below-md {
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+}
