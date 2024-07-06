@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {HeaderComponent} from "../header/header.component";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatIcon, MatIconModule} from "@angular/material/icon";
-import {MatFormField} from "@angular/material/form-field";
+import {MatFormField, MatPrefix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 
 @Component({
@@ -14,7 +14,8 @@ import {MatInput} from "@angular/material/input";
     MatIcon,
     MatIconModule,
     MatFormField,
-    MatInput
+    MatInput,
+    MatPrefix
   ],
   templateUrl: './mortgage-form.component.html',
   styleUrl: './mortgage-form.component.scss'
