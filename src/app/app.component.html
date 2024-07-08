@@ -1,6 +1,10 @@
 <div class="app__container">
   <div class="app__container-data-input">
-    <lendwell-mortgage-form></lendwell-mortgage-form>
+    <lendwell-mortgage-form (onFormSubmitted)="setResults($event)"></lendwell-mortgage-form>
+  </div>
+  <div class="app__container-data-output">
+    <lendwell-mortgage-result [loanAmount]="loanAmount" [monthlyPayment]="monthlyPayment"
+                              [times]="times" [dataBlurred]="blurred" ></lendwell-mortgage-result>
   </div>
 </div>
 

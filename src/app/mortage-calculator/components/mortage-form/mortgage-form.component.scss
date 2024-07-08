@@ -8,6 +8,16 @@
     margin-left: 24px;
     //display: flex;
 
+    &-footer {
+     display: flex;
+      flex-direction: row;
+      align-content: space-between;
+
+      .separator {
+        margin-left: 12px;
+      }
+    }
+
     .Title {
       color: $title-color;
     }
@@ -21,14 +31,31 @@
       }
     }
 
+    .fields_container {
+      display: flex;
+      flex-direction: row;
+      margin: 60px 0 24px 0;
+
+      &-right {
+        margin-left: 48px;
+      }
+    }
+
+
+
+
+    .next-button {
+      margin-left: 24px;
+    }
+
     .formGroup {
       display: flex;
       flex-direction: column;
-      margin: 75px 0 24px 0;
+      margin: 12px 0 48px 0;
 
 
       .inputGroup {
-        display:flex;
+        display: flex;
         align-items: center;
 
 
@@ -42,6 +69,10 @@
 
         .form-icon {
           color: $icon-color;
+        }
+
+        .prefix-icon {
+          color: $prefix-color;
         }
       }
     }

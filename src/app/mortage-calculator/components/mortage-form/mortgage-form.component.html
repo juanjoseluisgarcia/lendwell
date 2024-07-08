@@ -1,24 +1,104 @@
-<div class="form_container">
-  <lendwell-header></lendwell-header>
-  <div class="form__container">
-    <div class="form__title">
-      <h4 class="Title">Your Mortgage</h4>
-      <h4 class="Subtitle">Calculate your Mortgage</h4>
-    </div>
-    <div class="form__container-data-input">
-      <form [formGroup]="mortgageForm">
-        <div class="formGroup">
-          <div class="inputGroup">
-            <span class="form-icon"><mat-icon>help</mat-icon></span><span>Borrowing Amount</span><span
-            class="importance">Required</span>
+<form [formGroup]="mortgageForm" (ngSubmit)="Validate()">
+  <div class="form_container">
+    <lendwell-header></lendwell-header>
+    <div class="form__container">
+      <div class="form__title">
+        <h4 class="Title">Your Mortgage</h4>
+        <h4 class="Subtitle">Calculate your Mortgage</h4>
+
+        <div class="fields_container">
+          <div class="fields_container-left">
+            <div class="formGroup">
+              <div class="inputGroup">
+                <span class="form-icon"><mat-icon>help</mat-icon></span><span>Borrowing Amount</span><span
+                class="importance">Required</span>
+              </div>
+              <div class="form__container-data-input-field">
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="loanAmount" placeholder=""/>
+                  <span matTextPrefix>&euro;&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="formGroup">
+              <div class="inputGroup">
+                <span class="form-icon"><mat-icon>help</mat-icon></span><span>Repayment Period</span><span
+                class="importance">Required</span>
+              </div>
+              <div class="form__container-data-input-field">
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="repaymentPeriod" placeholder="">
+                    @for (repaymentPeriod of repaymentPeriods$ | async; track repaymentPeriod) {
+                      <ng-container>
+                        <mat-option [value]="repaymentPeriod.id">
+                          <mat-radio-group>
+                            <mat-radio-button [value]=repaymentPeriod.id>{{ repaymentPeriod.name }}</mat-radio-button>
+                          </mat-radio-group>
+                        </mat-option>
+                      </ng-container>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="formGroup">
+              <div class="inputGroup">
+                <span class="form-icon"><mat-icon>help</mat-icon></span><span>Deposit Amount</span><span
+                class="importance">Required</span>
+              </div>
+              <div class="form__container-data-input-field">
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="depositAmount" placeholder=""/>
+                  <span matTextPrefix>&euro;&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </div>
           </div>
-          <div class="form__container-data-input-field">
-            <mat-form-field appearance="outline">
-              <input matInput formControlName="loanAmount" placeholder=""/>
-              <span matTextPrefix>&euro;&nbsp;</span>
-            </mat-form-field>
+          <div class="fields_container-right">
+            <div class="formGroup">
+              <div class="inputGroup">
+                <span class="form-icon"><mat-icon>help</mat-icon></span><span>Purchase Price</span><span
+                class="importance">Required</span>
+              </div>
+              <div class="form__container-data-input-field">
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="propertyPrice" placeholder=""/>
+                  <span matTextPrefix>&euro;&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="formGroup">
+              <div class="inputGroup">
+                <span class="form-icon"><mat-icon>help</mat-icon></span><span>Total House Income</span><span
+                class="importance">Required</span>
+              </div>
+              <div class="form__container-data-input-field">
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="totalIncome" placeholder=""/>
+                  <span matTextPrefix>&euro;&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="formGroup">
+              <div class="inputGroup">
+                <span class="form-icon"><mat-icon>help</mat-icon></span><span>Additional Funding</span><span
+                class="importance">Optional</span>
+              </div>
+              <div class="form__container-data-input-field">
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="additionalFunding" placeholder=""/>
+                  <span matTextPrefix>&euro;&nbsp;</span>
+                </mat-form-field>
+              </div>
+            </div>
           </div>
         </div>
-      </form>
+      </div>
+    </div>
+    <div class="form__container-footer">
+      <button mat-flat-button disabled>Go Back</button>
+      <div class="separator"></div>
+      <button type="submit" class="next-button" mat-flat-button>Next Step</button>
     </div>
   </div>
+</form>

@@ -3,15 +3,52 @@
 
 .app {
   &__container {
-    display: flex;
-    flex-direction: column;
-    background: $container-background;
-    padding: 20px;
-    margin: 20px;
-
     @include responsive-below-md {
-      padding: 10px;
-      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: $container-background;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    @include responsive-from-md {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      background: $container-background;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    &-data-input {
+      display: flex;
+      background-color: $container-background;
+      width: 600px;
+      flex-direction: column;
+      margin: 0 28px 0 80px;
+
+      &-field {
+        margin: 8px 0 8px 16px;
+      }
+    }
+
+    &-data-output {
+      display: flex;
+      background-color: $app-background;
+      flex-direction: column;
+      justify-content: center;
+      width: 600px;
+      align-items: center;
+      margin: 0 28px 0 80px;
+
+      @include responsive-below-md {
+        margin: 10px 0 10px 0;
+      }
+
+      &-field {
+        margin: 8px 0 8px 16px;
+      }
     }
   }
 }

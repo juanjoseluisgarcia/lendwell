@@ -1,0 +1,97 @@
+@import "../../../variables";
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  background-color: $container-background;
+  width: 400px;
+  border-radius: 12px;
+  padding: 36px;
+
+}
+
+.separator {
+  margin-left: 12px
+}
+
+.mortgage-result {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 32px;
+  }
+  &-monthly {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 32px;
+  }
+  &-value-blurred {
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: 0 0 12px $title-desc-color;
+    color: transparent;
+  }
+  &-value {
+    font-size: 40px;
+    font-weight: 500;
+    color: $title-desc-color;
+  }
+
+  &-units {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    color: $prefix-color;
+    height: 100%;
+  }
+  &-details {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      margin: 16px;
+      background-color: $app-background;
+      border-radius: 8px;
+      height: 65px;
+      width: 101px;
+
+      &-value {
+        font-size: 24px;
+        font-weight: 500;
+        color: $card-value-color;
+      }
+
+      &-desc {
+        font-size: 12px;
+        font-weight: 500;
+        color: $card-value-color;
+      }
+
+      &-value-blurred {
+        font-size: 24px;
+        font-weight: 500;
+        text-shadow: 0 0 12px $card-value-color;
+        color: transparent;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 18px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-top: 20px;
+  color: $title-desc-color;
+}

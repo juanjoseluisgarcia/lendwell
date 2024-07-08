@@ -1,0 +1,27 @@
+<div class="mortgage-result__container">
+  <div class="result-card">
+    <span class="title">Your Mortgage Calculation</span>
+    <span class="subtitle">Here we will give you an estimate of your repayments and your ability to borrow</span>
+    <div class="mortgage-result-monthly">
+      <span
+        [ngClass]="{'mortgage-result-value-blurred' : dataBlurred(), 'mortgage-result-value': !dataBlurred()}">{{ monthlyPayment() | currency: "EUR" }}</span>
+      <div class="separator">
+        <span class="mortgage-result-units">Per Month</span>
+      </div>
+    </div>
+    <div class="mortgage-result-details">
+      <div class="mortgage-result-details-card">
+        <span [ngClass]="{'mortgage-result-details-card-value-blurred' : dataBlurred(), 'mortgage-result-details-card-value' : !dataBlurred()}">{{years()}}</span>
+        <span class="mortgage-result-details-card-desc">Years</span>
+      </div>
+      <div class="mortgage-result-details-card">
+        <span [ngClass]="{'mortgage-result-details-card-value-blurred' : dataBlurred(), 'mortgage-result-details-card-value' : !dataBlurred()}">{{times()}}x</span>
+        <span class="mortgage-result-details-card-desc">Years</span>
+      </div>
+      <div class="mortgage-result-details-card">
+        <span [ngClass]="{'mortgage-result-details-card-value-blurred' : dataBlurred(), 'mortgage-result-details-card-value' : !dataBlurred()}">{{loanAmount()}}%</span>
+        <span class="mortgage-result-details-card-desc">Loan</span>
+      </div>
+    </div>
+  </div>
+</div>
